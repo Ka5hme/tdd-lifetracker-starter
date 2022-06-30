@@ -4,7 +4,7 @@ require("colors");
 const PORT = process.env.PORT ? Number(process.env.PORT) : 3001;
 
 const SECRET_KEY = process.env.SECRET_KEY || "newString"
-const BCRYPT_WORK_FACTOR = process.env.BCRYPT_WORK_FACTOR || "13"
+const BCRYPT_WORK_FACTOR = 13
 const IS_TESTING = process.env.DATABASE_TEST_NAME
 
 function getDatabaseUri() {
@@ -29,4 +29,4 @@ module.exports = {
   BCRYPT_WORK_FACTOR,
   IS_TESTING,
 
-};
+}
