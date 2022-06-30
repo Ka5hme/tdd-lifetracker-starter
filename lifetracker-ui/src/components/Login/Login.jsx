@@ -1,5 +1,7 @@
 import "./Login.css"
+import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import axios from "axios"
 
 export default function Login(){
     const navigate = useNavigate()
@@ -9,18 +11,42 @@ export default function Login(){
       email: "",
       password: "",
     })
-
+  
     const handleOnInputChange = (event) => {
-        if (event.target.name === "email") {
-          if (event.target.value.indexOf("@") === -1) {
-            setErrors((e) => ({ ...e, email: "Please enter a valid email." }))
-          } else {
-            setErrors((e) => ({ ...e, email: null }))
-          }
+      if (event.target.name === "email") {
+        if (event.target.value.indexOf("@") === -1) {
+          setErrors((e) => ({ ...e, email: "Please enter a valid email." }))
+        } else {
+          setErrors((e) => ({ ...e, email: null }))
         }
-    
-        setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
       }
+  
+      setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
+    }
+  
+    const handleOnSubmit = async (e) => {
+      e.preventDefault()
+      setIsLoading(true)
+      setErrors((e) => ({ ...e, form: null }))
+  
+      try {
+        const res = await axios.post(`http://localhost:3001/auth/login`, form)
+        if (res?.data) {
+          //setAppState(res.data)
+          setIsLoading(false)
+          navigate("/activity")
+        } else {
+          setErrors((e) => ({ ...e, form: "Invalid username/password combination" }))
+          setIsLoading(false)
+        }
+      } catch (err) {
+        console.log(err)
+        const message = err?.response?.data?.error?.message
+        setErrors((e) => ({ ...e, form: message ? String(message) : String(err) }))
+        setIsLoading(false)
+      }
+    }
+  
     
     return(
         <div className="Login">
@@ -36,7 +62,7 @@ export default function Login(){
                         <input type="password" name="password" placeholder="password" value={form.password} onChange={handleOnInputChange}/>
                     </div>
 
-                    <button className="btn">Login</button>
+                    <button className="btn" disabled={isLoading} onClick={handleOnSubmit}>{isLoading ? "Loading..." : "Login"}</button>
                 </div>
                 <div className="footer">
                     <p>Don't have an account? Sign up</p>
