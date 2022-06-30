@@ -11,7 +11,7 @@ export default function Register() {
                     <input type="email" name="email" placeholder="Enter a valid email" value=""/>
                 </div>
                 <div className="input-field">
-                    <label for="Username">Email</label>
+                    <label for="Username">Username</label>
                     <input type="text" name="email" placeholder="your_username" />
                 </div>
                 <div className="split-input-field">
@@ -35,8 +35,7 @@ export default function Register() {
 
             </div>
             <div className="footer">
-                <p>Already have and account? Login
-                <a href="/login">here</a>
+                <p>Already have an account? Login  <a href="/login">here</a>
                 </p>
             </div>    
         </div>
