@@ -8,7 +8,7 @@ import watch from "../../Assets/smartwatch-screen-digital-device.e2983a85.svg"
 
 export default function Landing(){
     return(
-        <div class="Landing">
+        <div className="Landing">
             <div className="hero">
                 <img src={watch} alt="hero img"></img>
                 <h1>Life Tracker</h1>

@@ -19,6 +19,6 @@ CREATE TABLE users (
     image_url   TEXT NOT NULL,
     user_id     INTEGER NOT NULL,
     created_at  TIMESTAMP NOT NULL DEFAULT NOW(),
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 
     ); 
