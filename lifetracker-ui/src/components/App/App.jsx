@@ -5,6 +5,9 @@ import Login from "components/Login/Login"
 import Landing from "components/Landing/Landing"
 import Registration from "components/Registration/Registration"
 import Activity from "components/Activity/Activity"
+import Exercise from "components/Exercise/Excercise"
+import Nutrition from "components/Nutrition/Nutrition"
+import Sleep from "components/Sleep/Sleep"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useState, useEffect } from "react"
 import apiClient from "../../services/apiClient"
@@ -38,6 +41,9 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Landing user={user} setUser={setUser}/>}/>
               <Route path="/login" element={<Login user={user} setUser={setUser}/>}/>
+              <Route path="/exercise" element={<Exercise user={user} setUser={setUser}/>}/>
+              <Route path="/sleep" element={<Sleep user={user} setUser={setUser}/>}/>
+              <Route path="/nutrition" element={<Nutrition user={user} setUser={setUser}/>}/>
               <Route path="/register" element={<Registration user={user} setUser={setUser}/>}/>
               <Route path="/activity" element={<Activity user={user} setUser={setUser} />}/>
               

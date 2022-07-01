@@ -1,5 +1,12 @@
 import "./Activity.css"
-export default function Activity(){
+import AccessForbidden from "../AccessForbidden/AccessForbidden"
+
+export default function Activity({user, setUser}){
+    const showActivity = () =>{
+        if (!user?.email) {
+            return <AccessForbidden user={user} setUser={setUser}/>
+        }
+        
     return(
     <div className="ActivityPage">
         <div className="content">
@@ -72,5 +79,11 @@ export default function Activity(){
             </div>
         </div>
     </div>
+    )
+    }
+    return (
+        <div className="Page">
+            {showActivity()}
+        </div>
     )
 }
