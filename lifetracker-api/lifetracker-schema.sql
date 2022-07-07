@@ -17,6 +17,7 @@ CREATE TABLE users (
     category    TEXT NOT NULL,
     calories    INTEGER NOT NULL,
     image_url   TEXT NOT NULL,
+    quantity    INTEGER NOT NULL DEFAULT 1,
     user_id     INTEGER NOT NULL,
     created_at  TIMESTAMP NOT NULL DEFAULT NOW(),
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE

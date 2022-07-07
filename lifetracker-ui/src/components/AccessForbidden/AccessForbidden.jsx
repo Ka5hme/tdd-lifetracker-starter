@@ -3,6 +3,7 @@ import {Link, useNavigate} from "react-router-dom"
 import apiClient from "../../services/apiClient"
 import {useState, useEffect} from "react"
 import Login from "../Login/Login"
+import "./AccessForbidden.css"
 
 export default function AccessForbidden({user,setUser,}){
     // const navigate = useNavigate();
@@ -18,7 +19,7 @@ export default function AccessForbidden({user,setUser,}){
     // }
     return(
         <div className="AccessForbidden">
-            <h1>You must be logged in to access this page!</h1>
+            <span class="error">You must be logged in to access that page</span>
             <Login user={user} setUser={setUser}/>
         </div>
     )
