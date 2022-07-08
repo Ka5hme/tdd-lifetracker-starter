@@ -1,6 +1,7 @@
 import AccessForbidden from "../AccessForbidden/AccessForbidden"
 import NutritionFeed from "./NutritionFeed"
 import "./NutritionPage.css"
+import { Link } from "react-router-dom"
 
 export default function Nutrition({user, setUser}){
 
@@ -8,7 +9,7 @@ export default function Nutrition({user, setUser}){
 
 
 
-    
+
     const showActivity = () =>
     {
         if (!user?.email) {
@@ -27,7 +28,9 @@ export default function Nutrition({user, setUser}){
                     <div className="NutritionOverview">
                         <div className="header">
                             <h3>Overview</h3>
-                            <button className="Button outline small outline aqua ">Record Nutrition</button>
+                            <Link to="/nutrition/create">
+                                <button className="Button outline small outline aqua ">Record Nutrition</button>
+                            </Link>
                         </div>
                         <div className="feed">
                             <NutritionFeed />

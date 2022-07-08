@@ -24,6 +24,7 @@ class ApiClient {
         
         try {
             const res = await axios({ url, method, data, headers })
+            console.log(res, url)
             return { data: res.data, error: null }
         } 
         catch (error) {
@@ -55,9 +56,14 @@ class ApiClient {
     async makeNutrition(info) {
         return await this.request({endpoint: `nutrition/`, method: "POST", data: info});
     }
-    async fetchNutrition() {
-        return await this.request({endpoint: `nutrition/`, method: "GET"});
+
+    async fetchNutrition(){
+        return await this.request({endpoint: `nutrition`, method: `GET`, data: null})
     }
+
+    // async fetchNutrition(user) {
+    //     return await this.request({endpoint: `nutrition`, method: `GET`, data: user})
+    // }
 
 }
 

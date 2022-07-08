@@ -1,21 +1,22 @@
-import { Link } from "react-router-dom"
+
 import { useState, useEffect } from "react"
-import apiClient from "../../services/apiClient"
 import NutritionCard from "./NutritionCard"
 import * as React from "react"
 import API from "../../services/apiClient"
 
-export default function NutritionDetails({user}) {
+export default function NutritionFeed({user}) {
 
     const [nutrition, setNutrition] = useState([])
 
     const [error, setError] = useState(null)
 
     async function nutritionInfo(){
-        const {data, err} = await API.fetchNutrition()
+        
+        const {data, err} = await API.fetchNutrition(user)
         if(err)
         setError(err)
         if(data){
+            console.log(data)
             setNutrition(data.nutrition)
         }
     }
@@ -23,6 +24,26 @@ export default function NutritionDetails({user}) {
     useEffect(()=>{
         nutritionInfo()
     }, []);
+
+
+    // useEffect(() => {
+    //     const nutritionInfo = async () => {
+            
+    //       try {
+    //         const { data } = await API.fetchNutrition(user);
+    //         setNutrition(data.nutrition);
+            
+    //       } catch (err) {
+    //         setError(err);
+    //       }
+    
+         
+    //     };
+        
+    //     nutritionInfo();
+    //   }, []);
+    
+    
 
     return(
         

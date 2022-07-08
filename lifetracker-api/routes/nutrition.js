@@ -8,13 +8,13 @@ router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
     try{
         const {user} = res.locals;
         const nutrition = await Nutrition.listNutritionForUser({user});
-        return res.status(200).json({nutrition});
+        return res.status(201).json({nutrition});
     }catch(err){
         next(err)
     }
 })
 
-router.post("/" , async(req, res, next)=>{
+router.post("/" ,  security.requireAuthenticatedUser, async(req, res, next)=>{
     try{
         const {user} = res.locals;
         const nutrition = await Nutrition.createNutrition({user, nutrition: req.body});

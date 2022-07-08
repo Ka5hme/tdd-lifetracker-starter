@@ -16,7 +16,7 @@ export default function Activity({user, setUser}){
                 <div className="buttons">
                     <Link to='/exercise/create' className='exercise-btn'>Add Exercise</Link>
                     <Link to='/sleep/create' className='sleep-btn'>Log Sleep</Link>
-                    <Link to='/nutrition/create' className='nutrition-btn'>Record Nutrition</Link>
+                    <Link to="/nutrition/create" className='nutrition-btn'>Record Nutrition</Link>
                 </div>
             </div>
             <div className="stats">
@@ -70,7 +70,7 @@ export default function Activity({user, setUser}){
     </div>
     )
     }
-    
+
     return (
         <div className="Page">
             {showActivity()}
