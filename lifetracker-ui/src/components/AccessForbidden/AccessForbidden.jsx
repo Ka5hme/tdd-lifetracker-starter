@@ -19,7 +19,7 @@ export default function AccessForbidden({user,setUser,}){
     // }
     return(
         <div className="AccessForbidden">
-            <span class="error">You must be logged in to access that page</span>
+            <span className="error">You must be logged in to access that page</span>
             <Login user={user} setUser={setUser}/>
         </div>
     )

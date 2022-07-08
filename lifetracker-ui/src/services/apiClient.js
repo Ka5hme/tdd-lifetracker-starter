@@ -52,24 +52,11 @@ class ApiClient {
         localStorage.setItem(this.tokenName, "")
     }
 
-    async addExercise(exercise)
-    {
-        return await this.request({ endpoint: `exercise/add`, method: `POST`, data: exercise})
+    async makeNutrition(info) {
+        return await this.request({endpoint: `nutrition/`, method: "POST", data: info});
     }
-
-    async getAllExercise()
-    {
-        return await this.request({ endpoint: `exercise`, method: `GET`})
-    }
-
-    async getExerciseById(id)
-    {
-        return await this.request({ endpoint: `exercise/${id}`, method: `GET`})
-    }
-
-    async getActInfo()
-    {
-        return await this.request({ endpoint: `activity/info`, method: `GET`})
+    async fetchNutrition() {
+        return await this.request({endpoint: `nutrition/`, method: "GET"});
     }
 
 }

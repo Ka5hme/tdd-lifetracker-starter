@@ -5,15 +5,15 @@ const db = require("../db")
 class Nutrition {
     static async listNutritionForUser({user}){
         const results = await db.query(
-            `SELECT n.id AS "nutritionID",
+            `SELECT n.id AS "nutritionId",
                     n.name AS "name",
                     n.category AS "category",
                     n.calories AS "calories",
                     n.image_url AS "image",
                     n.quantity AS "quantity",
-                    n.created_at AS "created",
+                    to_char(n.created_at, 'MM/DD/YYYY') AS "created"
             FROM nutrition AS n
-                JOIN users AS ON u.id = n.user_id
+                JOIN users AS u ON u.id = n.user_id
             WHERE n.user_id = (
                 SELECT id FROM users WHERE email = $1
             );
