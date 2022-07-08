@@ -2,6 +2,7 @@ import * as React from "react"
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import API from "../../services/apiClient"
+import "./NutritionFrom.css" 
 
 export default function NutritionForm(){
     const [form, setForm] = useState({
@@ -57,8 +58,8 @@ export default function NutritionForm(){
                     setPost(true)
             }
         }
-        
-            const handleOnInputChange = (event) => {
+
+        const handleOnInputChange = (event) => {
                 setForm((state) => ({ ...state, [event.target.name]: event.target.value }))
             }
     
@@ -90,7 +91,7 @@ export default function NutritionForm(){
                         <label for= "imageUrl">Image URL</label>
                         <input type="text" name="imageUrl" placeholder="http://www.food-image.com/1" value={form.imageUrl} onChange={handleOnInputChange}></input>
                     </div>
-                    <button className="Button primary large  aqua" >Save</button>
+                    <button className="Button primary large  aqua"  onClick={handleOnSubmit} >Save</button>
             </div>
         </div>
     )
