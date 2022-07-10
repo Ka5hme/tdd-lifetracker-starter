@@ -50,7 +50,7 @@ export default function NutritionFeed({user}) {
         <div className="feed">
         {nutrition.length != 0 ?
           
-          nutrition.map((info) => (<NutritionCard key={info.nutritionId} name={info.name} category={info.category} calories={info.calories} imageUrl={info.image} quantity={info.quantity} createdAt={info.created} id={info.id} /> ))
+          nutrition.map((info) => (<NutritionCard key={info.nutritionId} name={info.name} category={info.category} calories={info.calories} imageUrl={info.imageUrl} quantity={info.quantity} createdAt={info.created} id={info.id} /> ))
           : 
           <div className="empty">
             <h2>Nothing here yet.</h2>

@@ -9,7 +9,7 @@ class Nutrition {
                     n.name AS "name",
                     n.category AS "category",
                     n.calories AS "calories",
-                    n.image_url AS "image",
+                    n.image_url AS "imageUrl",
                     n.quantity AS "quantity",
                     to_char(n.created_at, 'MM/DD/YYYY') AS "created"
             FROM nutrition AS n
@@ -30,7 +30,7 @@ class Nutrition {
 
     static async createNutrition({nutrition, user}){
 
-        const requiredFields = ["name", "category", "quantity", "calories", "image"];
+        const requiredFields = ["name", "category", "quantity", "calories", "imageUrl"];
 
         requiredFields.forEach(field => {
             if(!nutrition.hasOwnProperty(field)) {
@@ -48,8 +48,8 @@ class Nutrition {
                 user_id
             )
             VALUES ($1, $2, $3, $4, $5, (SELECT id FROM users WHERE email=$6))
-            RETURNING id, name, category, quantity, calories, image_url, user_id, created_at
-        `, [nutrition.name, nutrition.category, nutrition.quantity, nutrition.calories, nutrition.image, user.email]
+            RETURNING id, name, category, quantity, calories, image_url AS "imageUrl", user_id, created_at
+        `, [nutrition.name, nutrition.category, nutrition.quantity, nutrition.calories, nutrition.imageUrl, user.email]
 
         );
         const theNutrition = results.rows[0];

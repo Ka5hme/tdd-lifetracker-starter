@@ -6,62 +6,66 @@ import "./NutritionFrom.css"
 
 export default function NutritionForm(){
     const [form, setForm] = useState({
-
-
+        name: "",
+        calories: 1,
+        imageUrl: "",
+        category: "",
+        quantity: 1
     })
 
-    const [error, setError] = useState(null)
-    const [post, setPost] = useState(false)
+    const [errors, setError] = useState(null)
+    // const [post, setPost] = useState(false)
     const navigate = useNavigate()
 
 
-    useEffect(()=>{
-        if(post){
-            navigate("/nutrition")
-        }
-    }, [post, navigate])
+    // useEffect(()=>{
+    //     if(post){
+    //         navigate("/nutrition")
+    //     }
+    // }, [post, navigate])
 
-
-    const handleOnSubmit = async (event) =>{
-        setError((state)=>({...state, form: null}))
-
-        event.preventDefault();
-
-        if(form.name == ""){
-            setError((state)=>({...state, form: "No Name Provided"}))
+    const handleOnSubmit = async () => {
+        setError((e) => ({ ...e, form: null }));
+        if (form.name === "") {
+            setError((e) => ({ ...e, form: "Invalid name" }));
             return;
+          } else {
+            setError((e) => ({ ...e, form: null }));
         }
-
-        if(form.category == ""){
-            setError((state)=>({...state, form: "No Category Provided"}))
+        
+        if (form.category === "") {
+            setError((e) => ({ ...e, form: "Invalid category" }));
+            console.log(errors.body)
             return;
+          } else {
+            setError((e) => ({ ...e, form: null }));
         }
 
-        const {data, err} = await API.makeNutrition(
-            {
-                name: form.name,
-                calories: form.calories,
-                imageUrl: form.imageUrl,
-                category: form.category,
-                quantity: form.quantity
-            })
-
-            if(err) setError((state) => ({...state, form: err?.response?.data?.error?.message }))
-            if (data){
-                setForm({
-                        name: "",
-                        calories: 1,
-                        imageUrl: "",
-                        category: "",
-                        quantity: 1
-                    })
-                    setPost(true)
-            }
+        if (form.imageUrl === "") {
+            setError((e) => ({ ...e, form: "Invalid image URL" }));
+            console.log(errors.body)
+            return;
+          } else {
+            setError((e) => ({ ...e, form: null }));
         }
+        
+    
+        const { data, error } = await API.createNutrition({
+          name: form.name,
+          category: form.category,
+          quantity: Number(form.quantity),
+          calories: Number(form.calories),
+          imageUrl: form.imageUrl,
+        });
+        if (error) setError((e) => ({ ...e, form: error }));
+        if (data) {
+          navigate("/nutrition");
+        }
+    };
 
         const handleOnInputChange = (event) => {
-                setForm((state) => ({ ...state, [event.target.name]: event.target.value }))
-            }
+            setForm((f) => ({ ...f, [event.target.name]: event.target.value }));
+          }
     
 
 
