@@ -24,21 +24,21 @@ export default function Activity({user, setUser}){
                     <div className="SummaryStat large gold">
                         <div className="background">
                             <p>Total Exercise Minutes</p>
-                            <h1>0</h1>
+                            <h1>100</h1>
                            
                         </div>
                     </div>
                     <div className="SummaryStat large purple">
                         <div className="background">
                             <p>Avg Sleep Hours</p>
-                            <h1>0</h1>
+                            <h1>8</h1>
                            
                         </div>
                     </div>
                     <div className="SummaryStat large aqua">
                         <div className="background">
                             <p>Avg Daily Calories</p>
-                            <h1>0</h1>
+                            <h1>2050</h1>
                             
                         </div>
                     </div>
@@ -47,21 +47,21 @@ export default function Activity({user, setUser}){
                 <div className="SummaryStat small teal">
                     <div className="background">
                         <p>Maximum Hourly Calories</p>
-                        <h1>0</h1>
+                        <h1>400</h1>
                        
                     </div>
                 </div>
                 <div className="SummaryStat small orange">
                     <div className="background">
                         <p>Avg Exercise Intensity</p>
-                        <h1>0</h1>
+                        <h1>500</h1>
                         
                     </div>
                 </div>
                 <div className="SummaryStat small red">
                     <div className="background">
                         <p>Total Hours Slept</p>
-                        <h1>0</h1>
+                        <h1>48</h1>
                         
                     </div>
                 </div>

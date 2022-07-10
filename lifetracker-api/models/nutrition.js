@@ -55,6 +55,27 @@ class Nutrition {
         const theNutrition = results.rows[0];
         return theNutrition;
     }
+
+
+    // static async getDailyCalories({ user }) {
+
+    
+    //     const results = await db.query(
+    //       `
+    //       SELECT to_char(n.created_at, 'MM/DD/YYYY') AS "date",
+    //       ROUND(AVG (n.calories)) AS "totalCaloriesPerDay"
+    //       FROM nutrition AS n
+    //       JOIN users AS u ON u.id = n.user_id
+    //       WHERE u.id = (SELECT id FROM users WHERE email = $1)
+    //       GROUP BY date
+    //       `,
+    //       [user.email]
+          
+    //     );
+      
+    //     return results.rows
+    //   }        
+
 }
 
 module.exports = Nutrition
