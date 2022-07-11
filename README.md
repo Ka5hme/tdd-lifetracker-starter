@@ -2,7 +2,7 @@
 
 Submitted by: **Likashmi Deosaran**
 
-Deployed Application: [Lifetracker Deployed Site][(ADD_LINK_HERE)](https://spiffy-curtain.surge.sh/nutrition)
+Deployed Application: [Lifetracker Deployed Site][(ADD_LINK_HERE)](https://spiffy-curtain.surge.sh)
 
 ## Application Features
 
