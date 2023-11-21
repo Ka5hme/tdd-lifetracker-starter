@@ -38,7 +38,7 @@ Implement any of the following features to improve the application:
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
+`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding the walkthrough video)
 
 `ADD_EMBEDDED_CODE_HERE`
 Week 4
@@ -55,15 +55,15 @@ https://www.loom.com/share/6475361ba9234c908b17d8153cca052b
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Yes for the most part, the jwt Tokens I feel weren't talked about enough so when implementing them I beleive not only I but people from my pod encountered challenges.
+Yes, for the most part, the JWT Tokens I feel weren't talked about enough so when implementing them I believe not only I but people from my pod encountered challenges.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-As soon as I got most of the front end working I wouldve started on the nutrition sql table as its bery needed for the nutrition section on the front end and without it the front end doesnt really function how its supposed to. 
+As soon as I got most of the front end working I would've started on the nutrition SQL table as it's very needed for the nutrition section on the front end and without it the front end doesn't really function how it's supposed to. 
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Everything that I knew I completed worked as intended but I was dissapointed as many if my peers had their activity/nutrition section close to completion. I really want to try coidng the backend first and then worrying about the front end but coming from a non computer scinece background and having little coding knowledge its hard for me to code certain things without seeing an end product
+Everything that I knew I completed worked as intended but I was disappointed as many of my peers had their activity/nutrition section close to completion. I really want to try coding the backend first and then worrying about the front end but coming from a non computer science background and having little coding knowledge it's hard for me to code certain things without seeing an end product
 
 ### Open-source libraries used
 
@@ -73,4 +73,4 @@ Everything that I knew I completed worked as intended but I was dissapointed as 
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
 
-Shout out to Kiara and Robert from Schimidt Furtues pod 1
+Shout out to Kiara and Robert from Schmidt Furtues pod 1
